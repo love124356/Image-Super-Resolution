@@ -40,7 +40,8 @@ def main(json_path='options/train_msrresnet_psnr.json'):
     '''
 
     parser = argparse.ArgumentParser()
-    parser.add_argument('--opt', type=str, default=json_path, help='Path to option JSON file.')
+    parser.add_argument('--opt', type=str, default=json_path,
+                        help='Path to option JSON file.')
     parser.add_argument('--launcher', default='pytorch', help='job launcher')
     parser.add_argument('--local_rank', type=int, default=0)
     parser.add_argument('--dist', default=False)
@@ -54,7 +55,7 @@ def main(json_path='options/train_msrresnet_psnr.json'):
     if opt['dist']:
         init_dist('pytorch')
     opt['rank'], opt['world_size'] = get_dist_info()
-    
+
     if opt['rank'] == 0:
         util.mkdirs((path for key, path in opt['path'].items() if 'pretrained' not in key))
 
@@ -189,7 +190,8 @@ def main(json_path='options/train_msrresnet_psnr.json'):
             # -------------------------------
             if current_step % opt['train']['checkpoint_print'] == 0 and opt['rank'] == 0:
                 logs = model.current_log()  # such as loss
-                message = '<epoch:{:3d}, iter:{:8,d}, lr:{:.3e}> '.format(epoch, current_step, model.current_learning_rate())
+                message = '<epoch:{:3d}, iter:{:8,d}, lr:{:.3e}> '.format(
+                    epoch, current_step, model.current_learning_rate())
                 for k, v in logs.items():  # merge log information into message
                     message += '{:s}: {:.3e} '.format(k, v)
                 logger.info(message)
@@ -227,22 +229,29 @@ def main(json_path='options/train_msrresnet_psnr.json'):
                     # -----------------------
                     # save estimated image E
                     # -----------------------
-                    save_img_path = os.path.join(img_dir, '{:s}_{:d}.png'.format(img_name, current_step))
+                    save_img_path = os.path.join(
+                        img_dir, '{:s}_{:d}.png'.format(
+                            img_name, current_step))
                     util.imsave(E_img, save_img_path)
 
                     # -----------------------
                     # calculate PSNR
                     # -----------------------
-                    current_psnr = util.calculate_psnr(E_img, H_img, border=border)
+                    current_psnr = util.calculate_psnr(E_img, H_img,
+                                                       border=border)
 
-                    logger.info('{:->4d}--> {:>10s} | {:<4.2f}dB'.format(idx, image_name_ext, current_psnr))
+                    logger.info('{:->4d}--> {:>10s} | {:<4.2f}dB'.format(
+                        idx, image_name_ext, current_psnr))
 
                     avg_psnr += current_psnr
 
                 avg_psnr = avg_psnr / idx
 
                 # testing log
-                logger.info('<epoch:{:3d}, iter:{:8,d}, Average PSNR : {:<.2f}dB\n'.format(epoch, current_step, avg_psnr))
+                logger.info(
+                    '<epoch:{:3d}, iter:{:8,d}, Average PSNR : {:<.2f}dB\n'.format(
+                        epoch, current_step, avg_psnr))
+
 
 if __name__ == '__main__':
     main()
