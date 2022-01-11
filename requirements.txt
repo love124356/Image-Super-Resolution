@@ -4,3 +4,5 @@ pillow
 torchvision
 hdf5storage
 ninja
+matplotlib
+timm

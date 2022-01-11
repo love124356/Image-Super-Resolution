@@ -1,4 +1,8 @@
 testing_lr_images
 training_hr_images
+results
+superresolution
 
 __pycache__
+
+*.pth

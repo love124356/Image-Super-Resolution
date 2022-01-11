@@ -20,7 +20,7 @@
       , "dataroot_H": "testing_lr_images/testing_lr_images"// path of H training dataset. DIV2K (800 training images)
       , "dataroot_L": null             // path of L training dataset
 
-      , "H_size": 144                   // 96/144|192/384 | 128/192/256/512. LR patch size is set to 48 or 64 when compared with RCAN or RRDB.
+      , "H_size": 192             // 96/144|192/384 | 128/192/256/512. LR patch size is set to 48 or 64 when compared with RCAN or RRDB.
 
       , "dataloader_shuffle": true
       , "dataloader_num_workers": 8

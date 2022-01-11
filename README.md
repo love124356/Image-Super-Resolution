@@ -80,7 +80,7 @@ If you use different hardware, the inference result may be a little different.
 
 ## Results
 
-Our model achieves PSNR 28.1442dB
+Our model achieves PSNR 28.1521dB
 
 
 ## Reference
