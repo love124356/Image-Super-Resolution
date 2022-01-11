@@ -66,12 +66,12 @@ Trained model will be saved in ```superresolution/swinir_sr_classical_patch48_x3
 
 ## Inference
 
-Please download [this model]() if you want to reproduce my submission file, put it in ```model_zoo/model_final.pth``` and run the following code.
+Please download [this model]() if you want to reproduce my submission file, put it in ```model_zoo``` and run the following code.
 
 To reproduce my submission file or test the model you trained, run:
 
 ```py
-$ python inference.py
+$ python inference.py --task classical_sr --scale 3  --model_path model_zoo/model_final.pth --folder_lq testing_lr_images/testing_lr_images
 ```
 
 Prediction file will be saved in ```results/swinir_classical_sr_x3```
