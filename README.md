@@ -66,7 +66,7 @@ Trained model will be saved in ```superresolution/swinir_sr_classical_patch48_x3
 
 ## Inference
 
-Please download [this model]() if you want to reproduce my submission file, put it in ```model_zoo``` and run the following code.
+Please download [this model](https://reurl.cc/8W2Gvo) if you want to reproduce my submission file, put it in ```model_zoo``` and run the following code.
 
 To reproduce my submission file or test the model you trained, run:
 
@@ -80,7 +80,7 @@ If you use different hardware, the inference result may be a little different.
 
 ## Results
 
-Our model achieves PSNR 28.1521dB
+Our model achieves PSNR 28.3899dB
 
 
 ## Reference

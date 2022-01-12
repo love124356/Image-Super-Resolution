@@ -6,3 +6,4 @@ hdf5storage
 ninja
 matplotlib
 timm
+requests
