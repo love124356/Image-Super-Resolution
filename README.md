@@ -1,6 +1,6 @@
 # Image-Super-Resolution
 
-This repository gathers the code for nuclei-segmentation from the [in-class CodaLab competition](https://codalab.lisn.upsaclay.fr/competitions/622?secret_key=4e06d660-cd84-429c-971b-79d15f78d400).
+This repository gathers the code for image super resolution from the [in-class CodaLab competition](https://codalab.lisn.upsaclay.fr/competitions/622?secret_key=4e06d660-cd84-429c-971b-79d15f78d400).
 
 We use [SwinIR](https://github.com/JingyunLiang/SwinIR), an image restoration toolbox (PyTorch) that provides training and testing codes for SwinIR, to train our model.
 
